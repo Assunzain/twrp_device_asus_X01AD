@@ -96,6 +96,8 @@ TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone6/temp
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
+TW_H_OFFSET := -55
+TW_Y_OFFSET := 55
 
 TW_HAS_EDL_MODE := true
 TW_ENABLE_BLKDISCARD := true
