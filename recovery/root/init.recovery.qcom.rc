@@ -9,3 +9,11 @@ on fs
 
 on boot
     start health-hal-2-1
+    start hvdcp_opti
+
+# HVDCP
+service hvdcp_opti /system/bin/hvdcp_opti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
