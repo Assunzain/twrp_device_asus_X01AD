@@ -15,6 +15,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     keymaster_ver=3.0
 
+# fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.fastbootd.available=true
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
