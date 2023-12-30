@@ -106,6 +106,8 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TW_H_OFFSET := -55
 TW_Y_OFFSET := 55
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_TORCH_PATH := "/sys/class/leds/led:torch_1"
 
 TW_HAS_EDL_MODE := true
 TW_INCLUDE_FASTBOOTD := true
