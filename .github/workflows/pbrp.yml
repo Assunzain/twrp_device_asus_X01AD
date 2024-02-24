@@ -37,12 +37,7 @@ on:
       BUILD_TARGET:
         description: 'Specify your Build Target' # Pick among boot, recovery and vendor_boot
         required: true
-        default: 'recovery'
-        type: choice
-        options:
-        - boot
-        - recovery
-        - vendorboot
+        default: 'mka pbrp'
       FILE_TO_CHECK:
         description: 'Specify which libs to check' # Use it know what kind of dependencies your missing for decryption.
         required: false
@@ -128,7 +123,7 @@ jobs:
       run: |
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all) -j8
+        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make installclean && ${{ github.event.inputs.BUILD_TARGET }} -j$(nproc --all) -j8
       working-directory: ${{ steps.pwd.outputs.workdir }}
       
     - name: Upload to Release
