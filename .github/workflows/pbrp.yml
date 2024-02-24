@@ -96,7 +96,7 @@ jobs:
         
     - name: Repo Sync
       run: |
-        repo sync -j$(nproc --all) --force-sync -j8
+        repo sync -j$(nproc --all) --force-sync -j12
       working-directory: workspace
       
     - name: Clone Device Tree
@@ -123,7 +123,7 @@ jobs:
       run: |
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make installclean && ${{ github.event.inputs.BUILD_TARGET }} -j$(nproc --all) -j8
+        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make installclean && ${{ github.event.inputs.BUILD_TARGET }} -j$(nproc --all) -j12
       working-directory: ${{ steps.pwd.outputs.workdir }}
       
     - name: Upload to Release
