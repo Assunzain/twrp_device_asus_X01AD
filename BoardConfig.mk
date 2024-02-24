@@ -148,3 +148,6 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Inherit extra if exists
 -include vendor/extra/BoardConfigExtra.mk
+
+# VINTF
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
